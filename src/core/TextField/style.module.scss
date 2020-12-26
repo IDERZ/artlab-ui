@@ -1,0 +1,18 @@
+.textField {
+    width: auto;
+    // float: left;
+}
+
+.input {
+    height:18px;
+    border: 1px solid #DEE4E7;
+    border-radius: 2px;
+    color: #333;
+    padding: 2px 5px;
+    margin: 1px 2px;
+    background-color: #FAFDFF;
+}
+
+.input::placeholder {
+    color: #aaa;
+}

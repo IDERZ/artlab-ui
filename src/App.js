@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import {Button} from "./core/Button";
+import {TextField} from "./core/TextField";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{padding: 10}}>
+      <h1>Artlab-UI components</h1>
+
+      <h3>Button</h3>
+      <div className="alButtons">
+        <Button text="Default button" />
+        <Button text="Blue button"  color="blue" />
+        <Button text="Red button" color="red"/>
+        <Button text="Disabled button" disabled/>
+      </div>
+
+      <h3>TextField</h3>
+      <div className="alInputTexts">
+        <TextField style={{width : 200}}/>
+        <TextField style={{width : 250}}/>
+        <TextField style={{width : '100%'}} placeholder="Утгаа оруулна уу"/>
+      </div>
     </div>
+    
   );
 }
 
