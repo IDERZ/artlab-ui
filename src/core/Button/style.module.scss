@@ -1,12 +1,19 @@
+%fill-gray {
+    border: 1px solid #ddd;
+    background-color: #efefef;
+    color: #666;    
+}
+
+$gray-bg  : #efefef;
+$gray-border : #ddd;
+$gray-text : #666;
+
 .button {
     position: relative;
     outline: none; 
     cursor: pointer; 
-    padding: 8px 10px;
-    margin: 5px;
-    border: 1px solid #ddd;
-    background-color: #efefef;
-    color: #666;
+    padding: 4px 10px;
+    margin: 1px 2px;
     border-radius: 3px;
     transition: background-color .6s ease;
     overflow: hidden;
@@ -30,6 +37,8 @@
         height: 200%;
         }
     }
+
+    @extend %fill-gray;
 }
 
 .button:first-of-type {
@@ -52,10 +61,51 @@
     transition: 0.8s;
 }
 
+.medium {
+    padding : 7px 10px;
+}
+
+.large {
+    padding : 11px 20px;
+}
+
+.outline {
+    background-color: transparent !important;
+}
+
+.icon {
+    padding: 7px;
+
+    &.medium {
+        padding:12px;
+    }
+
+    &.large {
+        padding:18px;
+    }
+
+    &.text {
+        padding-left: 5px;
+    }
+
+    &.text > i {
+        margin-right: 5px;
+    }
+}
+
+.round {
+    border-radius: 50%;
+}
+
 .blue {
     background-color: #337ab7;
     border: 1px solid #2e6da4;
     color: #fff;
+}
+
+.blue.outline {
+    border-color : #337ab7;
+    color: #2e6da4;
 }
 
 .blue:hover {
@@ -70,7 +120,60 @@
     color: #fff;
 }
 
+.red.outline {
+    border-color : #d9534f;
+    color: #d43f3a;
+}
+
 .red:hover {
-    background-color: #c9302c !important; 
-    border:1px solid #ac2925 !important;
+    background-color: #c9302c; 
+    border:1px solid #ac2925;
+}
+
+.green {
+    background-color: #66cc66;
+    border: 1px solid #4cae4c;
+    color: #fff;
+}
+
+.green.outline {
+    border-color : #66cc66;
+    color: #4cae4c;
+}
+
+.green:hover {
+    background-color: #449d44; 
+    border:1px solid #398439;
+}
+
+.orange {
+    background-color: #ec8564;
+    border: 1px solid #ea7049;
+    color: #fff;
+}
+
+.orange.outline {
+    border-color : #ec8564;
+    color: #ea7049;
+}
+
+.orange:hover {
+    background-color: #ea7049; 
+    border:1px solid #f76f44;
+}
+
+.yellow {
+    background-color: #f0ad4e;
+    border: 1px solid #eea236;
+    color: #fff;
+}
+
+.yellow.outline {
+    border-color : #f0ad4e;
+    color: #eea236;
+}
+
+.yellow:hover {
+    background-color: #ec971f; 
+    border:1px solid #ec971f;
 }

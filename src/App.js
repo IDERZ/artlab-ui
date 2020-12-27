@@ -1,30 +1,47 @@
-import React from "react";
+import React, {useState} from "react";
 
-import {Button} from "./core/Button";
-import {TextField} from "./core/TextField";
+import ButtonSample from "./sample/button";
+import TextFieldSample from "./sample/textField";
 
 function App() {
+
   return (
-    <div style={{padding: 10}}>
+    <div style={{padding: 10, display:'block'}}>
       <h1>Artlab-UI components</h1>
 
-      <h3>Button</h3>
-      <div className="alButtons">
-        <Button text="Default button" />
-        <Button text="Blue button"  color="blue" />
-        <Button text="Red button" color="red"/>
-        <Button text="Disabled button" disabled/>
-      </div>
+      <ButtonSample />
+      <TextFieldSample />
 
-      <h3>TextField</h3>
-      <div className="alInputTexts">
-        <TextField style={{width : 200}}/>
-        <TextField style={{width : 250}}/>
-        <TextField style={{width : '100%'}} placeholder="Утгаа оруулна уу"/>
-      </div>
-    </div>
-    
+    </div>    
   );
 }
+
+// function TestForm () {
+//     const [fname, setFname] = useState("");
+//     const [lname, setLname] = useState("");
+//     const [cname, setCname] = useState("");
+
+//     const valueChanged = (e) => {
+//       // console.log('type : ' + type);
+//       console.log('val : ' + e.target.value);
+//         // if (type == 'fname') {
+//         //   setFname(event.target.value);
+//         // }
+//     };
+
+//     const buttonClicked = () => {
+
+//     };
+
+//     return (
+//       <div>
+//         <h3>TestForm</h3>
+//         <div className="alInputTexts">
+          
+//           <div>fname: {fname}, lname: {lname}, cname: {cname}</div>
+//         </div>
+//       </div>
+//     );
+// }
 
 export default App;

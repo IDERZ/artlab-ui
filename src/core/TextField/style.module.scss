@@ -1,18 +1,44 @@
 .textField {
-    width: auto;
-    // float: left;
-}
-
-.input {
-    height:18px;
+    height:19px;
     border: 1px solid #DEE4E7;
     border-radius: 2px;
-    color: #333;
+    color: #444;
     padding: 2px 5px;
     margin: 1px 2px;
     background-color: #FAFDFF;
 }
 
-.input::placeholder {
+.textField::placeholder {
     color: #aaa;
+}
+
+.textField:focus {
+    outline: none !important;
+    border-color: #4487ca;
+    box-shadow: 0 0 3px #4487ca;
+}
+
+.error {
+    outline: none !important;
+    border-color: #d43f3a;
+    box-shadow: 0 0 1px #d43f3a;
+}
+
+.success {
+    outline: none !important;
+    border-color: #398439;
+    box-shadow: 0 0 1px #398439;
+}
+
+.stretch {
+    width: calc(100% - 14px);
+}
+
+.medium {
+    height: 25px;
+}
+
+.large {
+    height: 33px;
+    font-size: .9em;
 }
