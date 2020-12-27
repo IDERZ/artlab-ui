@@ -1,4 +1,34 @@
 .textField {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 200px;
+
+    .img {
+        position: absolute;
+        left: 3px;
+        top: 2px;
+        background-color: #eee;
+        border-right: 1px solid #DEE4E7;
+        width: 22px;
+        height: 23px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            color: #aaa;
+            font-size: 0.7em;
+        }
+    }
+}
+
+.textField:not(.icon) {
+    .img {display: none;}
+}
+
+.textField input{
+    width: calc(100% - 16px);
     height:19px;
     border: 1px solid #DEE4E7;
     border-radius: 2px;
@@ -8,37 +38,88 @@
     background-color: #FAFDFF;
 }
 
-.textField::placeholder {
+.textField input::placeholder {
     color: #aaa;
 }
 
-.textField:focus {
+.textField input:focus {
     outline: none !important;
-    border-color: #4487ca;
-    box-shadow: 0 0 3px #4487ca;
+    border-color: #4487ca !important;
+    box-shadow: 0 0 3px #4487ca !important;
+}
+
+.textField input:disabled {
+    cursor: not-allowed;
+    background-color: #efefef;
+    color:#888;
 }
 
 .error {
     outline: none !important;
-    border-color: #d43f3a;
-    box-shadow: 0 0 1px #d43f3a;
+    border-color: #e8a9a7 !important;
+    box-shadow: 0 0 2px #e8a9a7 !important;
 }
 
 .success {
     outline: none !important;
-    border-color: #398439;
-    box-shadow: 0 0 1px #398439;
+    border-color: #398439 !important;
+    box-shadow: 0 0 2px #398439 !important;
 }
 
 .stretch {
-    width: calc(100% - 14px);
+    width: 100%;
+}
+
+.textField {
+    &.icon {
+        input {
+            width: calc(100% - 38px);
+            padding-left: 27px;
+        }
+    }
 }
 
 .medium {
-    height: 25px;
+    .img {
+        width: 27px;
+        height: 29px;
+
+        i {
+            font-size:0.9em;
+        }
+    }
+
+    input {
+        height: 25px;
+    } 
+
+    &.icon {
+        input {
+            width: calc(100% - 44px);
+            padding-left: 32px;
+        }
+    }
 }
 
 .large {
-    height: 33px;
-    font-size: .9em;
+    .img {
+        width: 36px;
+        height: 37px;
+
+        i {
+            font-size:1.4em;
+        }
+    }
+
+    input {
+        height: 33px;
+        font-size: .9em;
+    }
+
+    &.icon {
+        input {
+            width: calc(100% - 54px);
+            padding-left: 42px;
+        }
+    }
 }

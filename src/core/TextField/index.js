@@ -4,10 +4,17 @@ import style from "./style.module.scss";
 export const TextField = (props) => {
 
     return (
-        <input type={props.type} style={{width : props.width}}
-            className={`${style.textField} ${props.stretch ? style[props.stretch] : ''} ${props.size ? style[props.size] : ''} ${props.validation ? style[props.validation] : ''}`}
-            onChange={props.valueChanged}
-            placeholder={props.placeholder}
-            disabled={props.disabled}/>
+        <div className={`${style.textField} ${props.size ? style[props.size] : ''} ${props.stretch ? style.stretch : ''} ${props.icon ? style.icon : ''}`}
+             style={props.style}>
+            <span className={style.img}>
+                <i className={props.icon}></i>
+            </span>
+            <input type="text"
+                className={`${props.validation ? style[props.validation] : ''}`}
+                onChange={props.valueChanged}
+                placeholder={props.placeholder}
+                disabled={props.disabled}
+                value={props.value}/>
+        </div>
     );
 }

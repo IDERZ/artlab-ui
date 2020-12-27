@@ -53,11 +53,11 @@ function SampleButton() {
             <div style={{padding:5}}>
                 <Button type="round" icon="fa fa-home"/>
                 <Button size="medium" type="round" icon="fa fa-home"/>
-                <Button size="large" type="round" icon="fa fa-home fa-lg"/>
+                <Button size="large" type="round" icon="fa fa-home"/>
 
                 <Button icon="fa fa-home"/>
                 <Button size="medium" icon="fa fa-home"/>
-                <Button size="large" icon="fa fa-home fa-lg"/>
+                <Button size="large" icon="fa fa-home"/>
             </div>
         </div>
     );
