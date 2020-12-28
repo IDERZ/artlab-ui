@@ -1,4 +1,8 @@
-.textField {
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.alInput {
     position: relative;
     display: block;
     overflow: hidden;
@@ -21,13 +25,18 @@
             font-size: 0.7em;
         }
     }
+
+    span {
+        font-size:0.9em;
+        color: #555;
+    }
 }
 
-.textField:not(.icon) {
+.alInput:not(.icon) {
     .img {display: none;}
 }
 
-.textField input{
+.alInput input{
     width: calc(100% - 16px);
     height:19px;
     border: 1px solid #DEE4E7;
@@ -38,44 +47,54 @@
     background-color: #FAFDFF;
 }
 
-.textField input::placeholder {
+.alInput input::placeholder {
     color: #aaa;
 }
 
-.textField input:focus {
+.alInput input:focus {
     outline: none !important;
     border-color: #4487ca !important;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 3px #4487ca !important;
     box-shadow: 0 0 3px #4487ca !important;
 }
 
-.textField input:disabled {
+.alInput input:disabled {
     cursor: not-allowed;
     background-color: #efefef;
     color:#888;
 }
 
-.error {
-    outline: none !important;
-    border-color: #e8a9a7 !important;
-    box-shadow: 0 0 2px #e8a9a7 !important;
+.alInput input[type=number] {
+    text-align: right;
 }
 
-.success {
-    outline: none !important;
-    border-color: #398439 !important;
-    box-shadow: 0 0 2px #398439 !important;
-}
-
-.stretch {
-    width: 100%;
-}
-
-.textField {
+.alInput {
     &.icon {
         input {
             width: calc(100% - 38px);
             padding-left: 27px;
         }
+    }
+
+    &.error input{
+        outline: none !important;
+        border-color: #e8a9a7 !important;
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 0 2px #e8a9a7 !important;
+        box-shadow: 0 0 2px #e8a9a7 !important;
+    }
+    
+    &.success input {
+        outline: none !important;
+        border-color: #8bd88b !important;
+        -webkit-appearance: none;
+        -webkit-box-shadow: 0 0 2px #8bd88b !important;
+        box-shadow: 0 0 2px #8bd88b !important;
+    }
+    
+    &.stretch {
+        width: 100%;
     }
 }
 

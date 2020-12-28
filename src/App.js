@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
 import ButtonSample from "./sample/button";
-import TextFieldSample from "./sample/textField";
+import InputTextSample from "./sample/inputText";
+import InputNumberSample from "./sample/inputNumber";
 
 function App() {
 
@@ -10,8 +11,8 @@ function App() {
       <h1>Artlab-UI components</h1>
 
       <ButtonSample />
-      <TextFieldSample />
-
+      <InputTextSample />
+      <InputNumberSample />
     </div>    
   );
 }
