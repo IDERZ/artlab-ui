@@ -1,5 +1,12 @@
 import React from "react";
 import style from "./style.module.scss";
+
+/*
+ * react-number-format - 4.4.2
+ * Author : Sudhanshu Yadav
+ * Copyright (c) 2016, 2020 to Sudhanshu Yadav, released under the MIT license.
+ * https://github.com/s-yadav/react-number-format.git
+ */
 import NumberFormat from "react-number-format";
 
 export const InputNumber = (props) => {

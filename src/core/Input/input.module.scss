@@ -54,7 +54,6 @@ input[type=number]::-webkit-inner-spin-button {
 .alInput input:focus {
     outline: none !important;
     border-color: #4487ca !important;
-    -webkit-appearance: none;
     -webkit-box-shadow: 0 0 3px #4487ca !important;
     box-shadow: 0 0 3px #4487ca !important;
 }
@@ -78,19 +77,17 @@ input[type=number]::-webkit-inner-spin-button {
     }
 
     &.error input{
-        outline: none !important;
-        border-color: #e8a9a7 !important;
-        -webkit-appearance: none;
-        -webkit-box-shadow: 0 0 2px #e8a9a7 !important;
-        box-shadow: 0 0 2px #e8a9a7 !important;
+        outline: none;
+        border-color: #e8a9a7;
+        -webkit-box-shadow: 0 0 2px #e8a9a7;
+        box-shadow: 0 0 2px #e8a9a7;
     }
     
     &.success input {
-        outline: none !important;
-        border-color: #8bd88b !important;
-        -webkit-appearance: none;
-        -webkit-box-shadow: 0 0 2px #8bd88b !important;
-        box-shadow: 0 0 2px #8bd88b !important;
+        outline: none;
+        border-color: #8bd88b;
+        -webkit-box-shadow: 0 0 2px #8bd88b;
+        box-shadow: 0 0 2px #8bd88b;
     }
     
     &.stretch {
