@@ -1,0 +1,225 @@
+.button {
+    position: relative;
+    outline: none; 
+    cursor: pointer; 
+    margin: 1px 2px;
+    border-radius: 2px;
+    transition: background-color .6s ease;
+    overflow: hidden;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform-style: flat;
+        transform: translate3d(-50%,-50%,0);
+        background: #fff;
+        opacity: 0.2;
+        border-radius: 100%;
+        transition: width .2s ease, height .2s ease;
+    }
+    &:active {
+        &:after {
+        width: 200%;
+        height: 200%;
+        }
+
+        transition: 0.8s;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    // &:first-of-type {
+    //     margin-left:0;
+    // }
+
+    &:disabled {
+        background-color: #eee;
+        color: #888;
+        cursor: not-allowed;
+    }
+
+    &.outline {
+        background-color: transparent !important;
+    }
+
+    &.small {
+        padding: 0 10px;
+        height: 26px;
+    }
+    
+    &.medium {
+        padding : 0 10px;
+        height: 32px;
+    }
+    
+    &.large {
+        font-size: 0.9em;
+        padding : 0 20px;
+        height: 38px;
+    }
+}    
+
+.gray {
+    border: 1px solid #ddd;
+    background-color: #efefef;
+    color: #666;    
+    
+    &:hover {
+        background-color: #ddd;
+        border-color: #ccc;
+    }
+}
+
+.blue {
+    background-color: #337ab7;
+    border: 1px solid #2e6da4;
+    color: #fff;
+
+    &:hover {
+        background-color: #286090; 
+        border:1px solid #204d74; 
+    }
+
+    &.outline {
+        border-color : #337ab7;
+        color: #2e6da4;
+    }
+}
+
+.red {
+    background-color: #d9534f;
+    border: 1px solid #d43f3a;
+    color: #fff;
+
+    &:hover {
+        background-color: #c9302c; 
+        border:1px solid #ac2925;
+    }
+    
+    &.outline {
+        border-color : #d9534f;
+        color: #d43f3a;
+    }
+}
+
+.green {
+    background-color: #66cc66;
+    border: 1px solid #4cae4c;
+    color: #fff;
+
+    &:hover {
+        background-color: #449d44; 
+        border:1px solid #398439;
+    }
+
+    &.outline {
+        border-color : #66cc66;
+        color: #4cae4c;
+    }
+}
+
+.orange {
+    background-color: #ec8564;
+    border: 1px solid #ea7049;
+    color: #fff;
+
+    &:hover {
+        background-color: #ea7049; 
+        border:1px solid #f76f44;
+    }
+
+    &.outline {
+        border-color : #ec8564;
+        color: #ea7049;
+    }
+}
+
+.yellow {
+    background-color: #f0ad4e;
+    border: 1px solid #eea236;
+    color: #fff;
+
+    &:hover {
+        background-color: #ec971f; 
+        border:1px solid #ec971f;
+    }
+
+    &.outline {
+        border-color : #f0ad4e;
+        color: #eea236;
+    }
+}
+
+.iconButton {
+    @extend .button;
+    
+    &.round {
+        border-radius: 50%;
+    }
+
+    padding: 0 !important;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    
+    &.small {
+        width:26px; 
+        
+        &.round {
+            width:30px;
+            height: 30px; 
+        }   
+    }
+    
+    &.medium {
+        font-size: 1em;
+        width:32px;
+
+        &.round {
+            width:36px;
+            height: 36px; 
+        }
+    }
+    
+    &.large {
+        font-size: 1.3em;
+        width:38px;
+
+        &.round {
+            width:42px;
+            height: 42px; 
+        }
+    }
+}
+
+.buttonGroup {
+    .button:first-child {
+        margin-right: 0;
+        border-top-right-radius: 0; 
+        border-bottom-right-radius: 0;
+        border-right-width: 1px; 
+    }
+
+    .button:not(:first-child):not(:last-child) {
+        margin-left: 0;
+        border-top-left-radius: 0; 
+        border-bottom-left-radius: 0; 
+        margin-right: 0;
+        border-top-right-radius: 0; 
+        border-bottom-right-radius: 0;
+        border-left: none; 
+        border-right-width: 1px; 
+    }
+
+    .button:last-child {
+        margin-left: 0;
+        border-top-left-radius: 0; 
+        border-bottom-left-radius: 0; 
+        border-left: none; 
+    }
+}

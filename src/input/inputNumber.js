@@ -1,6 +1,5 @@
 import React from "react";
-import style from "./style.module.scss";
-
+import PropTypes from "prop-types";
 /*
  * react-number-format - 4.4.2
  * Author : Sudhanshu Yadav
@@ -8,20 +7,21 @@ import style from "./style.module.scss";
  * https://github.com/s-yadav/react-number-format.git
  */
 import NumberFormat from "react-number-format";
+import css from "./style.module.scss";
 
-export const InputNumber = (props) => {
+const InputNumber = (props) => {
 
     // props
-    const size        = props.size ? style[props.size] : '';
-    const stretch     = props.stretch ? style.stretch : '';
-    const icon        = props.icon ? style.icon : '';
-    const textAlign   = props.textAlign === 'right' ? style.textRight : '';
+    const size        = props.size ? css[props.size] : '';
+    const stretch     = props.stretch ? css.stretch : '';
+    const icon        = props.icon ? css.icon : '';
+    const textAlign   = props.textAlign === 'right' ? css.textRight : '';
     const displayType = props.readOnly ? 'text' : '';
 
     return (
-        <div className={`${style.alInput} ${style.alNumber} ${size} ${stretch} ${icon} ${textAlign}`}
+        <div className={`${css.inputDiv} ${css.alNumber} ${size} ${stretch} ${icon} ${textAlign}`}
             style={props.style}>
-            <span className={style.img}>
+            <span className={css.img}>
                 <i className={props.icon}></i>
             </span>
             <span>{props.readOnly}</span>
@@ -44,3 +44,5 @@ export const InputNumber = (props) => {
         </div>
     )
 }
+
+export default InputNumber;

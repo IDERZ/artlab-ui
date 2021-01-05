@@ -1,0 +1,104 @@
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.inputDiv {
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    margin: 1px 2px;
+    width: 200px;
+
+    &.stretch {
+        width: 100%;
+    }
+
+    input {
+        width: calc(100% - 16px);
+        height:20px;
+        border: 1px solid #DEE4E7;
+        border-radius: 2px;
+        color: #444;
+        padding: 2px 5px;
+        background-color: #FAFDFF;
+
+        &::placeholder {
+            color: #aaa;        
+        }
+
+        &:focus {
+            outline: none !important;
+            border-color: #4487ca !important;
+            -webkit-box-shadow: 0 0 3px #4487ca !important;
+            box-shadow: 0 0 3px #4487ca !important;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: #efefef;
+            color:#888;
+        }
+    }
+
+    .prepend {
+        display: inline-block;
+        width: 28px;
+        height: 24px;
+        line-height: 24px;
+        background-color: #eee;
+        border: 1px solid #DEE4E7;
+        align-items: center;
+        text-align: center;
+        vertical-align: middle;
+        justify-content: center;
+        font-size: 0.8em;
+        color: #888;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+.inputDiv {
+    &.error input{
+        outline: none;
+        border-color: #e8a9a7;
+        -webkit-box-shadow: 0 0 2px #e8a9a7;
+        box-shadow: 0 0 2px #e8a9a7;
+    }
+    
+    &.success input {
+        outline: none;
+        border-color: #8bd88b;
+        -webkit-box-shadow: 0 0 2px #8bd88b;
+        box-shadow: 0 0 2px #8bd88b;
+    }
+}
+
+.medium {
+    input {
+        height: 26px;
+    } 
+
+    .prepend {
+        width: 36px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 1em;
+    }
+}
+
+.large {
+    input {
+        height: 32px;
+        font-size: .9em;
+    }
+
+    .prepend {
+        width: 42px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 1.2em;
+    }
+}

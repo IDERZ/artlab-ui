@@ -1,7 +1,10 @@
 import React from "react";
-import {InputNumber} from "../core/Input/Number";
+import {InputText, InputNumber} from "../input";
+import {Button, IconButton} from "../button";
+import {Icon} from "../icon";
 
-function InputNumberSample (){
+
+function SampleInput (){
 
     const cardExpiry = (val) => {
         let month = limit(val.substring(0, 2), '12');
@@ -28,9 +31,44 @@ function InputNumberSample (){
         return val;
     }
 
+
     return (
-        <div style={{padding:5, overflow:"hidden"}}>
-            <h2>InputNumber</h2>
+        <div>
+            <h2>Input</h2>
+            <h4>InputText</h4>
+            <div style={{padding:5, overflow:"hidden"}}>
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText style={{float:"left"}} placeholder="Standard field"/>
+                    <Button>Search</Button>
+                </div>
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText size="medium" placeholder="Medium field. validation success" validation="success"  style={{float:"left"}}/>
+                    <IconButton size="medium" icon="fa fa-search"/>
+                </div>
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText size="large" placeholder="Large field. validation error" validation="error" style={{float:"left"}}/>
+                    <IconButton size="large" icon="fa fa-sms"/>
+                </div>
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText size="large" placeholder="Disabled Large field." disabled style={{float:"left"}}/>
+                    <IconButton size="large" icon="fa fa-sms" text="Click"/>
+                </div>
+            </div>
+            <div style={{padding:5, overflow:"hidden", display:"inline-flex"}}>
+                <InputText placeholder="Text field with Icon"
+                           prepend={<Icon icon="fa fa-user"/>}/>
+                <InputText placeholder="Text field with Icon"
+                           size="medium" prepend={<Icon icon="fa fa-user"/>}/>
+                <InputText placeholder="Text field with Icon"
+                           size="large" prepend={<Icon icon="fa fa-user"/>}/>
+                <InputText placeholder="Disabled Text with Icon"
+                           size="large" prepend={<Icon icon="fa fa-coffee"/>} disabled/>
+            </div>
+            <div style={{padding:5, overflow:"hidden"}}>
+                <InputText size="medium" placeholder="Set width. 300px" style={{width:300}} icon="fa fa-coffee"/>
+            </div>
+
+            <h4>InputNumber</h4>
             <div className="example">
                 <div style={{overflow:"hidden", display:"block", marginBottom:5}}>
                     <label style={{float:"left", paddingRight:5, paddingTop:2, fontSize:13, color:"gray"}}> Read only number field: </label>
@@ -52,8 +90,8 @@ function InputNumberSample (){
                     <InputNumber format="+976 ####-####" mask="_" allowEmptyFormatting placeholder="Phone number format and mask (show)"/>
                 </div>
             </div>
-     </div>
+        </div>
     );
 }
 
-export default InputNumberSample;
+export default SampleInput;
