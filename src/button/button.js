@@ -5,6 +5,8 @@ import css from "./style.module.scss";
 
 const Button = (props) => {
 
+    console.log(props.type);
+
     const className = {
         color : props.color ? (' ' + css[props.color]) : '',
         size  : props.size  ? (' ' + css[props.size])  : '',
@@ -29,7 +31,7 @@ const Button = (props) => {
 Button.propTypes = {
     color        : PropTypes.oneOf(['gray', 'blue', 'red', 'green', 'orange', 'yellow']),
     size         : PropTypes.oneOf(['small', 'medium', 'large']),
-    type         : PropTypes.oneOf(['fill', 'outline', 'round']),
+    type         : PropTypes.oneOf(['fill', 'outline']),
     disabled     : PropTypes.bool,
     onClick      : PropTypes.func,
     marginTop    : PropTypes.number,

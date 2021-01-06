@@ -43,6 +43,11 @@
         cursor: not-allowed;
     }
 
+    &.fill {
+        overflow: hidden;
+        outline: none; 
+    }
+
     &.outline {
         background-color: transparent !important;
     }
@@ -198,6 +203,19 @@
 }
 
 .buttonGroup {
+
+    &.justified {
+        display: table;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .button {
+            display: table-cell;
+            width: 100%;
+        }
+    }
+
     .button:first-child {
         margin-right: 0;
         border-top-right-radius: 0; 

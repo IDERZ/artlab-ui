@@ -6,6 +6,7 @@ const SampleButton = (props) => {
     return (
         <div>
             <h2>Button</h2>
+
             <h4>Button</h4>
             <div style={{padding:5}}>
                 <Button>Default</Button>
@@ -92,6 +93,14 @@ const SampleButton = (props) => {
                     <Button color="blue">4</Button>
                 </ButtonGroup>
                 <IconButton icon="fas fa-caret-right" disabled/>
+            </div>
+            <div style={{padding:5}}>
+                <ButtonGroup justified>
+                    <Button>Button 1</Button>
+                    <Button>Button 2</Button>
+                    <Button>Button 3</Button>
+                    <Button>Button 4</Button>
+                </ButtonGroup>
             </div>
         </div>
     );
