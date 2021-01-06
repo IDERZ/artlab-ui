@@ -11,38 +11,67 @@ import css from "./style.module.scss";
 
 const InputNumber = (props) => {
 
-    // props
-    const size        = props.size ? css[props.size] : '';
-    const stretch     = props.stretch ? css.stretch : '';
-    const icon        = props.icon ? css.icon : '';
-    const textAlign   = props.textAlign === 'right' ? css.textRight : '';
-    const displayType = props.readOnly ? 'text' : '';
+    const className = {
+        size      : props.size       ? (' ' + css[props.size])       : '',
+        valid     : props.validation ? (' ' + css[props.validation]) : '',
+        stretched : props.stretched  ? (' ' + css.stretched)         : '',
+        textAlign : props.textAlign  ? (' ' + css[props.textAlign])  : '',
+        prepend   : props.prepend    ? (' ' + css.prepend       )    : ' hidden',
+        append    : props.append     ? (' ' + css.append        )    : ' hidden',
+    }
 
     return (
-        <div className={`${css.inputDiv} ${css.alNumber} ${size} ${stretch} ${icon} ${textAlign}`}
-            style={props.style}>
-            <span className={css.img}>
-                <i className={props.icon}></i>
-            </span>
-            <span>{props.readOnly}</span>
+        <div className={`${css.inputDiv}${className.size}${className.stretched}${className.textAlign}`}
+             style={{width:props.width,
+                     marginTop:props.marginTop,
+                     marginRight:props.marginRight,
+                     marginBottom:props.marginBottom,
+                     marginLeft:props.marginLeft}}>
+            <div className={`${className.prepend}`}>
+                {props.prepend}
+            </div>
             <NumberFormat thousandSeparator={props.thousandSeparator} 
                           decimalSeparator={props.decimalSeparator}
                           format={props.format} 
                           mask={props.mask}
-                          prefix={props.prefix}
-                          suffix={props.suffix}
-                          inputMode={props.inputMode}
-                          allowEmptyFormatting={props.allowEmptyFormatting}
-                          displayType={displayType}
+                          allowEmptyFormatting      
                           decimalScale={props.decimalScale}
                           fixedDecimalScale={props.decimalScale > 0 ? true : false}
                           value={props.value}
-                          onValueChange={props.valueChanged}
                           placeholder={props.placeholder}
                           disabled={props.disabled}
-                          onFocus={(e) => e.target.select()}/>
+                          onFocus={(e) => e.target.select()}
+                          onValueChange={props.valueChanged}/>
+            <div className={`${className.append}`}>
+                {props.append}
+            </div>
         </div>
     )
 }
+
+InputNumber.propTypes = {
+    size         : PropTypes.oneOf(['small', 'medium', 'large']),
+    width        : PropTypes.number,
+    placeholder  : PropTypes.string,
+    stretched    : PropTypes.bool,
+    disabled     : PropTypes.bool,
+    validation   : PropTypes.oneOf(['error', 'success']),
+    textAlign    : PropTypes.oneOf(['left', 'right', 'center']),
+    value        : PropTypes.any,
+    valueChanged : PropTypes.func,
+    prepend      : PropTypes.any,
+    append       : PropTypes.any,
+    marginTop    : PropTypes.number,
+    marginRight  : PropTypes.number,
+    marginBottom : PropTypes.number,
+    marginLeft   : PropTypes.number
+};
+
+InputNumber.defaultProps = {
+    size     : 'small',
+    stretch  : false,
+    disabled : false,
+    textAlign : "right"
+};
 
 export default InputNumber;

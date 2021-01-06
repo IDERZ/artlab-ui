@@ -6,17 +6,22 @@ import css from "./style.module.scss";
 const InputText = (props) => {
 
     const className = {
-        size     : props.size       ? (' ' + css[props.size]) : '',
-        valid    : props.validation ? (' ' + css[props.validation]) : '',
-        stretch  : props.stretch    ? (' ' + css.stretch) : '',
-        preprend : props.prepend    ? (' ' + css.prepend       ) : ' hidden',
-        append   : props.append     ? (' ' + css.append        ) : ' hidden',
+        size      : props.size       ? (' ' + css[props.size])       : '',
+        valid     : props.validation ? (' ' + css[props.validation]) : '',
+        stretched : props.stretched  ? (' ' + css.stretched)         : '',
+        textAlign : props.textAlign  ? (' ' + css[props.textAlign])  : '',
+        prepend   : props.prepend    ? (' ' + css.prepend       )    : ' hidden',
+        append    : props.append     ? (' ' + css.append        )    : ' hidden',
     }
     
     return (
-        <div className={`${css.inputDiv}${className.size}${className.valid}${className.stretch}`}
-            style={{width: props.width, float: props.float}}>
-                <div className={`${className.preprend}`}>
+        <div className={`${css.inputDiv}${className.size}${className.valid}${className.stretched}`}
+        style={{width:props.width,
+                marginTop:props.marginTop,
+                marginRight:props.marginRight,
+                marginBottom:props.marginBottom,
+                marginLeft:props.marginLeft}}>
+                <div className={`${className.prepend}`}>
                     {props.prepend}
                 </div>
                 <input type="text"
@@ -37,19 +42,25 @@ InputText.propTypes = {
     width        : PropTypes.number,
     float        : PropTypes.string,
     placeholder  : PropTypes.string,
-    stretch      : PropTypes.bool,
+    stretched    : PropTypes.bool,
     disabled     : PropTypes.bool,
     validation   : PropTypes.oneOf(['error', 'success']),
+    textAlign    : PropTypes.oneOf(['left', 'right', 'center']),
     value        : PropTypes.string,
     valueChanged : PropTypes.func,
     prepend      : PropTypes.any,
-    append       : PropTypes.any
+    append       : PropTypes.any,
+    marginTop    : PropTypes.number,
+    marginRight  : PropTypes.number,
+    marginBottom : PropTypes.number,
+    marginLeft   : PropTypes.number
 };
 
 InputText.defaultProps = {
-    size     : 'small',
-    stretch  : false,
-    disabled : false,
+    size      : 'small',
+    stretched : false,
+    disabled  : false,
+    textAlign : 'left'
 };
 
 export default InputText;

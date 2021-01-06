@@ -31,7 +31,6 @@ function SampleInput (){
         return val;
     }
 
-
     return (
         <div>
             <h2>Input</h2>
@@ -90,30 +89,23 @@ function SampleInput (){
             </div>
             <div style={{padding:5, overflow:"hidden"}}>
                 <InputText size="medium" placeholder="Set width. 400px" width={400} 
-                           prepend="@" append=".mn" value="сайн байна уу"/>
+                           prepend="@" append=".mn" value="Hi artlab."/>
+            </div>
+            <div style={{padding:5, overflow:"hidden"}}>
+                <InputText size="medium" placeholder="Set width. stretched" stretched
+                           prepend={<Icon icon="fa fa-star"/>} append="Text"/>
             </div>
 
             <h4>InputNumber</h4>
-            <div className="example">
-                <div style={{overflow:"hidden", display:"block", marginBottom:5}}>
-                    <label style={{float:"left", paddingRight:5, paddingTop:2, fontSize:13, color:"gray"}}> Read only number field: </label>
-                    <InputNumber value={123566} thousandSeparator="," decimalSeparator="." prefix={'₮'} 
-                                decimalScale="2" readOnly style={{float:"left"}}/>
-                </div>
-                <div style={{overflow:"hidden", display:"block", marginBottom:5}}>
-                    <InputNumber placeholder="Standart number field" style={{float:"left"}}/>
-                    <InputNumber value={150000} thousandSeparator="," decimalSeparator="." prefix={'₮'} 
-                                decimalScale="2" disabled textAlign="right" style={{float:"left", width:300}}/>
-                </div>
-                <div style={{overflow:"hidden", display:"block", marginBottom:5}}>
-                    <InputNumber thousandSeparator="," decimalSeparator="." inputMode="numeric" decimalScale="2" 
-                                 icon="fa fa-dollar-sign" textAlign="right" value="0" style={{float:"left"}}/>
-                    <InputNumber format="#### #### #### ####" placeholder="Master card number format field" style={{float:"left", width:300}}/>
-                </div>
-                <div style={{overflow:"hidden", display:"block", marginBottom:5}}>
-                    <InputNumber format={cardExpiry} placeholder="Format credit card expiry time" style={{float:"left"}}/>
-                    <InputNumber format="+976 ####-####" mask="_" allowEmptyFormatting placeholder="Phone number format and mask (show)"/>
-                </div>
+            <div style={{padding:5, overflow:"hidden"}}>
+                <InputNumber placeholder="Standart number field"/>
+                <InputNumber value="150000" thousandSeparator="," decimalSeparator="." 
+                             decimalScale="2" disabled/>
+                <InputNumber format="#### #### #### ####" placeholder="Master card number format field" textAlign="center"/>
+                <InputNumber format={cardExpiry} placeholder="Format credit card expiry time"/>
+                <InputNumber format="+976 ####-####" mask="_" textAlign="left"/>
+                <InputNumber thousandSeparator="," decimalSeparator="." decimalScale="2" 
+                             append={<Icon icon="fa fa-dollar-sign"/>} textAlign="right" value={0}/>
             </div>
         </div>
     );
