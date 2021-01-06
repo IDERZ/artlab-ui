@@ -5,8 +5,6 @@ import css from "./style.module.scss";
 
 const Button = (props) => {
 
-    console.log(props.type);
-
     const className = {
         color : props.color ? (' ' + css[props.color]) : '',
         size  : props.size  ? (' ' + css[props.size])  : '',

@@ -7,30 +7,61 @@ input[type=number]::-webkit-inner-spin-button {
     display: inline-flex;
     overflow: hidden;
     margin: 1px 2px;
+    border: 1px solid #DEE4E7;
+    background-color: #FAFDFF;
+    border-radius: 2px;
+
     width: 200px;
+    height: 24px;
 
     &.stretch {
         width: 100%;
     }
 
+    &:focus-within {
+        // outline: none;
+        border-color: #4487ca !important;
+        -webkit-box-shadow: 0 0 3px #4487ca !important;
+        box-shadow: 0 0 3px #4487ca !important;
+    }
+
+    &.error {
+        border-color: #e8a9a7;
+        -webkit-box-shadow: 0 0 2px #e8a9a7;
+        box-shadow: 0 0 2px #e8a9a7;
+    }
+    
+    &.success {
+        border-color: #8bd88b;
+        -webkit-box-shadow: 0 0 2px #8bd88b;
+        box-shadow: 0 0 2px #8bd88b;
+    }
+
+    .prepend {
+        flex: 0 0 auto;
+        padding: 0 5px;
+        min-width: 24px;
+        height: 24px;
+        line-height: 24px;
+        background-color: #eee;
+        text-align: center;
+        font-size: 0.8em;
+        color: #888;
+        border-right: 1px solid #ddd;
+    }
+
     input {
-        width: calc(100% - 16px);
-        height:20px;
-        border: 1px solid #DEE4E7;
-        border-radius: 2px;
+        flex: 1 1 auto;
+        width: 0;
+        height: 22px;
+        padding: 1px 5px;
         color: #444;
-        padding: 2px 5px;
-        background-color: #FAFDFF;
+        background-color: transparent;
+        border: none;
+        outline: none !important;
 
         &::placeholder {
             color: #aaa;        
-        }
-
-        &:focus {
-            outline: none !important;
-            border-color: #4487ca !important;
-            -webkit-box-shadow: 0 0 3px #4487ca !important;
-            box-shadow: 0 0 3px #4487ca !important;
         }
 
         &:disabled {
@@ -40,19 +71,17 @@ input[type=number]::-webkit-inner-spin-button {
         }
     }
 
-    .prepend {
-        display: inline-block;
-        width: 28px;
+    .append {
+        flex: 0 0 auto;
+        padding: 0 5px;
+        min-width: 24px;
         height: 24px;
         line-height: 24px;
         background-color: #eee;
-        border: 1px solid #DEE4E7;
-        align-items: center;
         text-align: center;
-        vertical-align: middle;
-        justify-content: center;
         font-size: 0.8em;
         color: #888;
+        border-left: 1px solid #ddd;
     }
 
     .hidden {
@@ -60,45 +89,36 @@ input[type=number]::-webkit-inner-spin-button {
     }
 }
 
-.inputDiv {
-    &.error input{
-        outline: none;
-        border-color: #e8a9a7;
-        -webkit-box-shadow: 0 0 2px #e8a9a7;
-        box-shadow: 0 0 2px #e8a9a7;
-    }
-    
-    &.success input {
-        outline: none;
-        border-color: #8bd88b;
-        -webkit-box-shadow: 0 0 2px #8bd88b;
-        box-shadow: 0 0 2px #8bd88b;
-    }
-}
-
 .medium {
+    width: 250px;
+    height: 30px;
+
     input {
-        height: 26px;
+        height: 28px;
+        font-size: .9em;
     } 
 
-    .prepend {
-        width: 36px;
+    .prepend, .append {
+        min-width: 36px;
         height: 30px;
         line-height: 30px;
-        font-size: 1em;
+        font-size: .9em;
     }
 }
 
 .large {
+    width: 300px;
+    height: 36px;
+
     input {
-        height: 32px;
+        height: 34px;
         font-size: .9em;
     }
 
-    .prepend {
-        width: 42px;
+    .prepend, .append {
+        min-width: 42px;
         height: 36px;
         line-height: 36px;
-        font-size: 1.2em;
+        font-size: .9em;
     }
 }

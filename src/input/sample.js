@@ -38,34 +38,59 @@ function SampleInput (){
             <h4>InputText</h4>
             <div style={{padding:5, overflow:"hidden"}}>
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText style={{float:"left"}} placeholder="Standard field"/>
+                    <InputText placeholder="Standard field"/>
                     <Button>Search</Button>
                 </div>
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="medium" placeholder="Medium field. validation success" validation="success"  style={{float:"left"}}/>
-                    <IconButton size="medium" icon="fa fa-search"/>
+                    <InputText placeholder="Standard field"/>
+                    <IconButton icon="fa fa-search"/>
+                </div>
+
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText size="medium" placeholder="Medium field. validation success"/>
+                    <Button size="medium">Search</Button>
                 </div>
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="large" placeholder="Large field. validation error" validation="error" style={{float:"left"}}/>
+                    <InputText size="medium" placeholder="Medium field. validation success"/>
+                    <IconButton size="medium" icon="fa fa-search"/>
+                </div>
+
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText size="large" placeholder="Large field. validation error"/>
+                    <Button size="large">Sms</Button>
+                </div>
+                <div style={{float:"left", display:"inline-flex"}}>
+                    <InputText size="large" placeholder="Large field. validation error"/>
                     <IconButton size="large" icon="fa fa-sms"/>
                 </div>
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="large" placeholder="Disabled Large field." disabled style={{float:"left"}}/>
+                    <InputText size="large" placeholder="Disabled Large field." disabled />
                     <IconButton size="large" icon="fa fa-sms" text="Click"/>
                 </div>
             </div>
-            <div style={{padding:5, overflow:"hidden", display:"inline-flex"}}>
-                <InputText placeholder="Text field with Icon"
+            <div style={{padding:5, overflow:"hidden"}}>
+                <InputText placeholder="Standard. Icon prepend"
                            prepend={<Icon icon="fa fa-user"/>}/>
-                <InputText placeholder="Text field with Icon"
+                <InputText placeholder="Medium. Icon prepend"
                            size="medium" prepend={<Icon icon="fa fa-user"/>}/>
-                <InputText placeholder="Text field with Icon"
+                <InputText placeholder="Large. Icon prepend"
                            size="large" prepend={<Icon icon="fa fa-user"/>}/>
-                <InputText placeholder="Disabled Text with Icon"
-                           size="large" prepend={<Icon icon="fa fa-coffee"/>} disabled/>
+                <InputText placeholder="Disabled large. Icon prepend"
+                           size="large" prepend={<Icon icon="fa fa-user"/>} disabled/>
             </div>
             <div style={{padding:5, overflow:"hidden"}}>
-                <InputText size="medium" placeholder="Set width. 300px" style={{width:300}} icon="fa fa-coffee"/>
+                <InputText placeholder="Standard. Text append"
+                           append="@mail.mn"/>
+                <InputText placeholder="Text field with Icon append"
+                           size="medium" append="@mail.mn"/>
+                <InputText placeholder="Text field with Icon append"
+                           size="large" append="@mail.mn"/>
+                <InputText placeholder="Disabled Text with Icon append"
+                           size="large" append="@mail.mn" disabled/>
+            </div>
+            <div style={{padding:5, overflow:"hidden"}}>
+                <InputText size="medium" placeholder="Set width. 400px" width={400} 
+                           prepend="@" append=".mn" value="сайн байна уу"/>
             </div>
 
             <h4>InputNumber</h4>
