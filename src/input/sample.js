@@ -46,20 +46,20 @@ function SampleInput (){
                 </div>
 
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="medium" placeholder="Medium field. validation success"/>
+                    <InputText size="medium" placeholder="Medium field. validation success" validation="success"/>
                     <Button size="medium">Search</Button>
                 </div>
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="medium" placeholder="Medium field. validation success"/>
+                    <InputText size="medium" placeholder="Medium field. validation success" validation="success"/>
                     <IconButton size="medium" icon="fa fa-search"/>
                 </div>
 
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="large" placeholder="Large field. validation error"/>
+                    <InputText size="large" placeholder="Large field. validation error" validation="error"/>
                     <Button size="large">Sms</Button>
                 </div>
                 <div style={{float:"left", display:"inline-flex"}}>
-                    <InputText size="large" placeholder="Large field. validation error"/>
+                    <InputText size="large" placeholder="Large field. validation error" validation="error"/>
                     <IconButton size="large" icon="fa fa-sms"/>
                 </div>
                 <div style={{float:"left", display:"inline-flex"}}>
