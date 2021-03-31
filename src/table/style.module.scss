@@ -1,0 +1,33 @@
+.tableWrapper {
+    overflow-x: auto;
+}
+
+table {
+    table-layout: fixed;
+    width: 100px;
+    background-color: #D6DFE6;
+    color:#333;
+    font-size: 0.7em;
+} 
+
+th {
+    padding: 2px 3px;
+    color:#000;
+    background-color: #f7f7f7; 
+    font-weight: 600;   
+}
+
+td {
+    padding: 2px 3px;
+    background-color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #444;
+}
+
+tr:hover {
+    background-color: #eee;
+}
+
+tr:hover td {background: transparent;}
